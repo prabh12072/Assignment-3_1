@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ques3</title>
+	<script type="text/javascript">
+	
+		function myFunction() 
+		{
+			var elem = document.getElementById("myBar");
+ 			var width = 10;
+  			var id = setInterval(frame, 100);
+ 			 function frame() {
+    			if (width >= 100) {
+      				clearInterval(id);
+    			} else {
+      			width++;
+     			 elem.style.width = width + '%';
+      			document.getElementById("label").innerHTML = width * 1  + '%';
+    					}
+  			}
+
+    		setTimeout(function(){ alert("Succesfully signup"); }, 10000);
+        
+		}
+    function addtrans(elem)
+    {
+      document.getElementById(elem).className="trans";
+    }
+    
+	</script>
+	
+	<style type="text/css">
+  
+	#myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+}
+
+#myBar {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+#label {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+		#back
+		{
+        background-image:url("bubble.jpg"); 
+			background-repeat: repeat;
+			background-size: 100%;
+            height:100%;
+            width: 600px;
+            position: relative;
+            left:400px;
+            
+          }
+        fieldset{
+        border : none;
+      }
+      legend{
+        color : white;
+      }
+      div.main {
+        
+        padding:8px;
+          margin: 8px;
+          background-color: #99BDD5; 
+          border: 1px solid ;
+        border-color : white;
+        border-radius:4px;
+        
+          position: relative;
+      }
+      input[type="text"]
+      {
+        position: absolute;
+        right:10px;
+        width:40%;
+        border-radius: 4px;
+        padding:1px;
+        margin:1px;
+        border:1px solid black;
+      }
+      .rad{
+        
+        position: absolute;
+        right: 216px;
+        top:29px;
+      }
+      textarea
+      {
+        position: absolute;
+        right: 10px;
+        width:45%;
+        border-radius: 4px;
+        padding:1px;
+        margin:1px;
+        border:1px solid black;
+      }
+      #txta
+      {
+        height:60px;
+      }
+       
+      .radio_image{
+        width : 15px;
+        height : 11px;
+      }
+      .button_class{
+        border : solid black;
+        border-radius: 10px;
+        color : white;
+        align-left : center;
+        background-color : black;
+        position : relative;
+        left : 43%;
+        width:100px;
+        margin: 1px;
+        padding: 1px;
+      }
+      .trans
+      {
+        transition-property: width;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+        -webkit-transition-property: width;
+        -webkit-transition-duration: 1s;
+        -webkit-transition-timing-function: ease-in-out;
+        -o-transition-property: width;
+        -o-transition-duration: 1s;
+        -o-transition-timing-function: ease-in-out;
+        -moz-transition-property: width;
+        -moz-transition-duration: 1s;
+        -moz-transition-timing-function: ease-in-out;
+      }
+      .trans:focus
+      {
+        width:75%;
+      }
+      @keyframes example
+      {
+        0%   {width: 0%;}
+        10%  {width: 10%;}
+        25%  {width: 25%;}
+          35%  {width: 35%;}          
+          50%  {width: 50%;}
+          60%  {width: 60%;}
+          75%  {width: 70%;}
+          85%  {width: 85%;}
+          100% {width: 100%;}
+      }
+      nav
+      {
+        border:2px solid red;
+        padding:2px;
+        margin:2px;
+        height:20px;
+        width:100%;
+        color:white;
+        background-color: red;
+        position:fixed;
+        top:0px;
+        z-index: 1;
+        text-align: center;
+      }
+  </style>
+</head>
+<body>
+<nav>
+    This is nav Bar
+  </nav>
+  <div id="back">
+    <form method="POST" action="" >
+  
+      <fieldset >
+        <legend> Step 1:Your details </legend>
+        
+
+        <div class="main">
+          
+          Name <input type="text" name="namme" placeholder="First and last name" id="name" onfocus="addtrans('name');" > </input>
+          <br>
+           
+        </div> 
+        
+        <div class="main">
+          Email 
+          <input type="text" name="email" placeholder="example@domain.com" id="email" onfocus="addtrans('email');"> </input> 
+          <br>
+        </div>
+          
+        <div class="main">
+          Phone 
+          <input type="text" name="phone" placeholder="" ="e.g. +4475000000" id="phone" onfocus="addtrans('phone');"> </input>
+          <br> 
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend> Step 1:Delivery address </legend>
+        <div class="main" id="txta">
+          Address <textarea rows="4" cols="50" name="address" id="address" onfocus="addtrans('address');"></textarea>
+        <br>
+        </div>
+
+        <div class="main">
+          Pincode <input type="text" name="pin" id="pin" onfocus="addtrans('pin');"> </input>
+        <br>
+        </div>
+
+        <div class="main">
+        Country <input type="text" name="country" id="country" onfocus="addtrans('country');"> </input>
+        <br>
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Step 1:Card details </legend>
+        <div class="main">
+          Card Type <br>
+          <br>
+            <div class="rad">
+              <input type="radio" value ="agn" name="Visa"> <img src="visa.jpg" alt="visa_logo" class="radio_image"></img> Visa </input> &nbsp
+              <input type="radio" value ="agn" name="AmEx"> <img src="amex.jpg" alt="amex_logo" class="radio_image"></img> AmEx</input> &nbsp
+              <input type="radio" value ="agn" name="Mastercard"> <img src="mastercard.jpg" alt="mc_logo" class="radio_image"> </img> Mastercard </input>
+            </div>
+
+          <br>
+        </div>
+        <div class="main">
+          Card Number <input type="text" name="card_num" id="c" onfocus="addtrans('c');" > </input>
+        <br> 
+        </div>
+
+        <div class="main">
+          Security Code <input type="text" name="security_code" id="b" onfocus="addtrans('b');"> </input>
+        <br>
+        </div>
+
+        <div class="main">
+          Name on card <input type="text" name="card_name" placeholder="exact name as on the card" id="a" onfocus="addtrans('a');"> </input>
+        <br>
+        </div>
+      </fieldset>
+      
+      <button class="button_class" type="button" value="Signup" name="signup" onclick="myFunction()"> Signup </button>
+      <div id="myProgress">
+  <div id="myBar">
+    <div id="label">10%</div>
+  </div>
+</div>
+    </form>
+   </div>
+</body>
+</html>
